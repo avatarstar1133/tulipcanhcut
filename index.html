@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi em, cô gái đặc biệt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hero">
+        <h1>hé lu Tulipcanhcut! ❤️</h1>
+        <p>BboAbe có một điều bất ngờ nhỏ dành cho em...</p>
+        <button class="btn-scroll" onclick="scrollToMemories()">
+            coi i ạ ⇩
+        </button>
+    </div>
+
+    <div id="memories" class="gallery-section">
+        <h2>Những khoảnh khắc của tụi mình nè</h2>
+        <p><i>(Ấn vào từng ô để xem điều bí mật nghaa)</i></p>
+        
+        <div class="gallery-grid">
+            <div class="memory-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>ai bít gì dou</h3>
+                        <p>❤️</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="img/anh1.jpg" alt="Kỷ niệm 1" onerror="this.src='https://via.placeholder.com/200x300?text=Anh+Lỗi'">
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>chí chóe đồ haa</h3>
+                        <p>😍</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="img/anh2.jpg" alt="Kỷ niệm 2" onerror="this.src='https://via.placeholder.com/200x300?text=Anh+Lỗi'">
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Tulip Canhcut Mhoa Eim.</h3>
+                        <p>🍕</p>
+                    </div>
+                    <div class="card-back">
+                        <img src="img/anh3.jpg" alt="Kỷ niệm 3" onerror="this.src='https://via.placeholder.com/200x300?text=Anh+Lỗi'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="invite" class="invite-section">
+        <div class="ticket-container">
+            <h2>💌 Lời mời đặc biệt 💌</h2>
+            <p>Thứ 5 này, anh muốn mời em đi <strong>Dookki ạ</strong>.</p>
+            <p>Eim có đồng ý đi cùng anh hong?</p>
+            <p>Mấy sếp hđqt đọc tới đây cho tớ xin phép rủ canhcut đi ăn Dookki ạ</p>
+            
+            <div class="buttons">
+                <button class="btn-yes" id="btnYes">Đồng ý! 😍</button>
+                <button class="btn-no" id="btnNo">Không 😢</button>
+            </div>
+            
+            <div id="message" class="hidden-message">
+                Tuyệt vời! Anh sẽ đón em lúc 7h tối nhé! ❤️🎉
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

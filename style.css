@@ -1,0 +1,241 @@
+/* --- CẤU HÌNH CHUNG --- */
+:root {
+    --primary-color: #ff758c;
+    --secondary-color: #ff7eb3;
+    --text-color: #4a4a4a;
+    --bg-color: #fff0f3;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-color), #fad0c4);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #d63384;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.btn-scroll {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.btn-scroll:hover {
+    transform: scale(1.1);
+    background-color: #d63384;
+}
+
+/* --- MEMORY GALLERY SECTION --- */
+.gallery-section {
+    padding: 50px 20px;
+}
+
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.memory-card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 15px;
+}
+
+/* Class được toggle bởi JS */
+.memory-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-front {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.card-back {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* --- INVITATION SECTION --- */
+.invite-section {
+    padding: 80px 20px;
+    background-color: white;
+    border-radius: 50px 50px 0 0;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.05);
+}
+
+.ticket-container {
+    border: 2px dashed var(--primary-color);
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #fff9fa;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-yes {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-no {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative; 
+    transition: top 0.2s, left 0.2s; /* Làm mượt chuyển động */
+}
+
+.hidden-message {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #d63384;
+    font-weight: bold;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ... (Code cũ giữ nguyên) ... */
+
+/* --- RESPONSIVE CHO MOBILE (XIAOMI 12T & OTHERS) --- */
+@media screen and (max-width: 768px) {
+    
+    /* Chỉnh lại font chữ tiêu đề cho đỡ bị tràn màn hình */
+    .hero h1 {
+        font-size: 2.2rem;
+        padding: 0 10px;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+
+    /* ALBUM ẢNH: Chuyển sang hiển thị to, vuốt dọc */
+    .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .memory-card {
+        /* Trên điện thoại, card nên to để nhìn rõ ảnh */
+        width: 85vw; /* Chiếm 85% chiều ngang màn hình */
+        height: 55vh; /* Chiếm hơn nửa chiều cao màn hình một chút */
+        max-width: 350px; /* Giới hạn không quá to */
+    }
+
+    /* LỜI MỜI: Tối ưu nút bấm cho ngón tay */
+    .ticket-container {
+        padding: 20px;
+        width: 90%; /* Căn lề đẹp hơn */
+        box-sizing: border-box;
+    }
+
+    .buttons {
+        flex-direction: column; /* Xếp dọc 2 nút cho dễ ấn */
+        gap: 15px;
+        align-items: center;
+        height: 150px; /* Dành khoảng trống để nút "Không" chạy */
+        position: relative; /* Để nút Không chạy trong phạm vi này thôi */
+    }
+
+    .btn-yes, .btn-no {
+        width: 100%; /* Nút to full chiều ngang container */
+        padding: 15px 0;
+        font-size: 1.3rem;
+    }
+
+    /* Đặt lại logic vị trí cho nút Không trên mobile */
+    .btn-no {
+        position: absolute; /* Để có thể di chuyển */
+        bottom: 0;
+        width: 100%;
+    }
+}
