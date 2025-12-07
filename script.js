@@ -186,3 +186,10 @@ function createConfetti() {
         }, duration * 1000);
     }
 }
+// --- 5. HÀM CUỘN TRANG (Bổ sung) ---
+function scrollToMemories() {
+    const memoriesSection = document.getElementById('memories');
+    if (memoriesSection) {
+        memoriesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
