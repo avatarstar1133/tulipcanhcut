@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xgvglwzn"; 
 
 // Số lần nút "Không" sẽ chạy trốn trước khi đứng yên
-const MAX_ESCAPE_TIMES = 3; 
+const MAX_ESCAPE_TIMES = 1; 
 // ============================================================
 
 
