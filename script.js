@@ -39,7 +39,8 @@ function setupButtons() {
     btnYes.addEventListener('click', () => {
         // 1. Hiệu ứng UI
         message.style.display = 'block';
-        message.innerHTML = "Tuyệt vời! Anh sẽ đón em đi nhé! ❤️🎉";
+        message.innerHTML = "Chốt đơn, đã thêm vào giỏ hàng. 🎉";
+        message.innerHTML = "Cảm ơn các sếp ạ, em sẽ hoàn thành trách nhiệm của em ạ. ❤️";
         message.className = "hidden-message success-msg"; // Style xanh/hồng
         
         btnYes.innerHTML = "Đã chốt đơn! ❤️";
